@@ -4,8 +4,6 @@ import bcrypt from 'bcryptjs';
 import dbConnect from '../../../../lib/dbConnect';
 import Admin from '../../../../models/Admin';
 
-export const dynamic = 'force-dynamic';
-
 const handler = NextAuth({
   providers: [
     CredentialsProvider({
