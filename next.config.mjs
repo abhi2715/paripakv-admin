@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
+  serverExternalPackages: ['bcryptjs', 'mongoose'],
 };
 
 export default nextConfig;
