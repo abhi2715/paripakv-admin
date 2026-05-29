@@ -12,14 +12,13 @@ const BlogSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 // Auto-generate slug from title if not provided
-BlogSchema.pre('validate', function (next) {
+BlogSchema.pre('validate', function () {
   if (this.title && !this.slug) {
     this.slug = this.title
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, '-')
       .replace(/(^-|-$)/g, '');
   }
-  next();
 });
 
 export default mongoose.models.Blog || mongoose.model('Blog', BlogSchema);
